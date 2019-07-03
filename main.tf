@@ -28,7 +28,8 @@ resource "google_compute_instance" "main" {
   labels = local.all_tags
 
   metadata = {
-    ssh-keys = "${var.username}:${var.ssh_public_key}"
+    ssh-keys  = "${var.username}:${var.ssh_public_key}"
+    user-data = var.user_data
   }
 
   boot_disk {

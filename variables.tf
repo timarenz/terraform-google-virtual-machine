@@ -58,6 +58,13 @@ variable "ssh_public_key" {
   type = string
 }
 
+variable "user_data" {
+  description = "Cloud init user data script in plain text"
+  type        = string
+  default     = null
+}
+
+
 variable "tags" {
   type    = map
   default = null
