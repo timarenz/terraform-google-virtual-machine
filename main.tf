@@ -27,6 +27,10 @@ resource "google_compute_instance" "main" {
 
   labels = local.all_tags
 
+  tags = var.network_tags
+
+  allow_stopping_for_update = true
+
   metadata = {
     ssh-keys  = "${var.username}:${var.ssh_public_key}"
     user-data = var.user_data
@@ -43,5 +47,10 @@ resource "google_compute_instance" "main" {
     subnetwork = var.subnet
     access_config {
     }
+  }
+
+  service_account {
+    email  = var.service_account_email
+    scopes = var.access_scopes
   }
 }

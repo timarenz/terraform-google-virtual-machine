@@ -3,8 +3,7 @@ variable "environment_name" {
 }
 
 variable "owner_name" {
-  type    = string
-  default = null
+  type = string
 }
 
 variable "ttl" {
@@ -64,8 +63,29 @@ variable "user_data" {
   default     = null
 }
 
-
 variable "tags" {
   type    = map
   default = null
+}
+
+variable "network_tags" {
+  type    = list(string)
+  default = null
+}
+
+variable "service_account_email" {
+  type    = string
+  default = null
+}
+
+
+variable "access_scopes" {
+  type = list(string)
+  default = [
+    "https://www.googleapis.com/auth/devstorage.read_only",
+    "https://www.googleapis.com/auth/logging.write",
+    "https://www.googleapis.com/auth/monitoring.write",
+    "https://www.googleapis.com/auth/service.management.readonly",
+    "https://www.googleapis.com/auth/servicecontrol"
+  ]
 }

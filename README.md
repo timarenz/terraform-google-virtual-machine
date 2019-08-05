@@ -1,1 +1,1 @@
-# terraform-google-virtualmachine
+# terraform-google-virtual-machine
