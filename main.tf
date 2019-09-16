@@ -23,6 +23,7 @@ resource "google_compute_instance" "main" {
   name         = var.name
   machine_type = var.size
   zone         = local.zone
+  project      = var.project
 
   labels = local.all_tags
 
