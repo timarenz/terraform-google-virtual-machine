@@ -8,7 +8,6 @@ resource "random_shuffle" "compute_zone" {
   result_count = 1
 }
 
-
 locals {
   zone = var.zone == null ? random_shuffle.compute_zone.result[0] : var.zone
   common_tags = {

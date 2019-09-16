@@ -16,8 +16,7 @@ variable "project" {
 }
 
 variable "region" {
-  type    = string
-  default = "europe-west4"
+  type = string
 }
 
 variable "zone" {
