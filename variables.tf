@@ -43,6 +43,11 @@ variable "subnet" {
   default = null
 }
 
+variable "subnet_project" {
+  type    = string
+  default = null
+}
+
 variable "image" {
   type    = string
   default = "ubuntu-os-cloud/ubuntu-1604-lts"
