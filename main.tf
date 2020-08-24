@@ -32,13 +32,14 @@ resource "google_compute_instance" "main" {
   allow_stopping_for_update = true
 
   metadata = {
-    ssh-keys  = "${var.username}:${var.ssh_public_key}"
+    ssh-keys  = var.ssh_public_key == null ? null : "${var.username}:${var.ssh_public_key}"
     user-data = var.user_data
   }
 
   boot_disk {
     initialize_params {
       image = var.image
+      size  = var.disk_size
     }
   }
 
@@ -46,6 +47,7 @@ resource "google_compute_instance" "main" {
     network            = var.network
     subnetwork         = var.subnet
     subnetwork_project = var.subnet_project
+    network_ip         = var.network_ip
     access_config {
     }
   }

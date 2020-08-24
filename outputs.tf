@@ -13,3 +13,7 @@ output "public_ip" {
 output "self_link" {
   value = google_compute_instance.main.self_link
 }
+
+output "zone" {
+  value = google_compute_instance.main.zone
+}

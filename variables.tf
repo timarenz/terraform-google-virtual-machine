@@ -53,12 +53,19 @@ variable "image" {
   default = "ubuntu-os-cloud/ubuntu-1604-lts"
 }
 
+variable "disk_size" {
+  description = "Disk size in gigabytes"
+  type        = number
+  default     = null
+}
+
 variable "username" {
   type = string
 }
 
 variable "ssh_public_key" {
-  type = string
+  type    = string
+  default = null
 }
 
 variable "user_data" {
@@ -82,6 +89,10 @@ variable "service_account_email" {
   default = null
 }
 
+variable "network_ip" {
+  type    = string
+  default = null
+}
 
 variable "access_scopes" {
   type = list(string)
